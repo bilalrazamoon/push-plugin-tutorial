@@ -1,0 +1,35 @@
+<ion-view view-title="Home">
+  <ion-header-bar>
+    <h1 class="title">Cordova Push</h1>
+  </ion-header-bar>
+  <ion-content class="padding">
+    <div class="card">
+      <div class="item item-divider">Push</div>
+      <div class="item item-body">
+        <button class="button button-block button-positive" ng-click="pushRegister()">
+          Register for Push
+        </button>
+        <button class="button button-block button-positive" ng-click="pushUnRegister()">
+          UnRegister for Push
+        </button>
+        <p ng-if="token">
+        Device token:<br>
+        <b><code>{{token}}</code></b>
+        </p>
+      </div>
+    </div>
+    <div ng-if="lastNotification" class="card">
+      <div class="item item-divider">Last push</div>
+        <div class="item item-body">
+          {{lastNotification | json}}
+        </div>
+      </div>
+    </div>
+    <div ng-if="error" class="card">
+      <div class="item item-divider">Push</div>
+      <div class="item item-body">
+        {{error | json}}
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
